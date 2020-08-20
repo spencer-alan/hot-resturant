@@ -8,12 +8,11 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 const tables = [
-    {
-        name: "Josh",
-        phonenumber: "949-616-6008",
-        email: "jshsandberg@gmail.com",
-        id: "EAT",
-    }
+
+];
+
+const waitlist = [
+    
 ];
 
 app.get("/", function(req, res) {
@@ -27,6 +26,14 @@ app.get("/tables", function(req, res) {
 app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
+
+app.get("/api/tables", function(req, res) {
+   return res.json(tables)
+})
+
+app.get("/api/waitlist", function(req, res) {
+    return res.json(waitlist)
+})
 
 app.post("/reserved", function(req, res) {
     let newTable = req.body;
