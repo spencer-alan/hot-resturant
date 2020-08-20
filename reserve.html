@@ -39,23 +39,23 @@
 						<form role="form">
 
 							<div class="form-group">
-								<label for="name" id="name">Name</label>
-								<input type="text" class="form-control" id="reserve_name">
+								<label for="name">Name</label>
+								<input type="text" class="form-control" id="name">
 							</div>
 
 							<div class="form-group">
-								<label for="" id="number">Phone Number</label>
-								<input type="text" class="form-control" id="reserve_phone">
+								<label for="">Phone Number</label>
+								<input type="text" class="form-control" id="number">
 							</div>
 
 							<div class="form-group">
-								<label for="" id="email">Email</label>
-								<input type="text" class="form-control" id="reserve_email">
+								<label for="" >Email</label>
+								<input type="text" class="form-control" id="email">
 							</div>
 
 							<div class="form-group">
-								<label for="" id="id">Unique ID</label>
-								<input type="text" class="form-control" id="reserve_uniqueID">
+								<label for="">Unique ID</label>
+								<input type="text" class="form-control" id="id">
 							</div>
 
 							<button type="submit" class="btn btn-primary submit" id="submit">Submit</button>
@@ -76,30 +76,38 @@
 
 	</div>
 	<script>
-		arr = [];
-		let name1=document.querySelector('#name');
-		let numba1 = document.querySelector('#number');
-		let email1= document.querySelector('#email');
-		let id1= document.querySelector('#id');
+		let arr = [];
+		// let name1=document.getElementById('#name');
+		// let numba1 = document.getElementById('#number');
+		// let email1= document.getElementById('#email');
+		// let id1= document.getElementById('#id');
 
-		let but = document.querySelector("#submit");
-		but.addEventListener("click", function(){
+		//let but = document.getElementById("#submit");
+
+		
+		$('#submit').on("click", function(){
 			var person ={
-			Name: name1.value.trim(),
-			Number: numba1.value.trim(),
-			email: email1.value.trim(),
-			id: id1.value.trim()
+				Name: $('#name').val().trim(),
+				Number: $('#number').val().trim(),
+				email: $('#email').val().trim(),
+				id: $('#id').val().trim()
 			};
-			$.post("/api/tables", person, function(data){
-				if(data){
-					alert("Reservation has been made!");
-				}
+			
+			console.log(person);
+			$.post("/api/tables", person, function(){
+				
+				
+				alert("Reservation has been made!");
+				
 
+				arr.push(person);
+				console.log(arr);
 				//clear the form submission
-				name1.val("");
-				numba1.val("");
-				email1.val("");
-				id1.val("");
+				// name1.val("");
+				// numba1.val("");
+				// email1.val("");
+				// id1.val("");
+				
 			});
 		})
 		
