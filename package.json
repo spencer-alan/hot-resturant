@@ -1,0 +1,19 @@
+{
+  "name": "hot-resturant",
+  "version": "1.0.0",
+  "description": "Group Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spencer-alan/hot-resturant.git"
+  },
+  "author": "Spencer Smith, Crystal Han, Josh Sandberg, Eric Folenta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spencer-alan/hot-resturant/issues"
+  },
+  "homepage": "https://github.com/spencer-alan/hot-resturant#readme"
+}
