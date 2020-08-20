@@ -24,8 +24,8 @@ app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-app.get("/reserved", function(req, res) {
-    res.sendFile(path.join(__dirname, "reserved.html"));
+app.get("/reserve", function(req, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
 app.post("/reserved", function(req, res) {
@@ -35,7 +35,7 @@ app.post("/reserved", function(req, res) {
 
     tables.push(newTable);
 
-    res.json(newCharacter);
+    res.json(newTable);
 });
 
 app.listen(PORT, function() {
